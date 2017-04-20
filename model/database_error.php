@@ -9,7 +9,7 @@
 
 <!-- the body section -->
 <body>
-     <header><h1>My Guitar Shop</h1></header>
+     <header><h1>To Do List</h1></header>
 
      <main>
           <h1>Database Error</h1>
