@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>To Do List application</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -34,6 +35,7 @@
 
 <body>
 
+<form name = "submitform" action="LoginMgr.php" method="post">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -45,7 +47,7 @@
                         <form role="form">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                    <input class="form-control" placeholder="username" name="username" type="username" autofocus>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" name="password" type="password" value="">
@@ -53,10 +55,13 @@
                                 <div class="checkbox">
                                     <label>
                                         <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                    </label>
+				   </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
+                                <a href="index.php" class="btn btn-lg btn-success btn-block" onclick =
+				"document.submitform.submit()";>Login</a>
+				<a href="create.php" class="btn btn-lg btn-success btn-block">Create Account</a>
+				<a href="find.php" class="btn btn-lg btn-success btn-block">Find Password</a>
                             </fieldset>
                         </form>
                     </div>
