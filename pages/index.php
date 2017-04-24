@@ -1,37 +1,31 @@
-<?php 
-include ("../model/database.php");
-
-$itemsQuery = $db->prepare("
-	SELECT id, message, submissiondate, duedate, Iscomplete
-	FROM items
-	WHERE user = :user
-");
-
-$itemsQuery->execute([
-	'user' => $_SESSION['username']
-]);
-
-$items = $itemsQuery->rowCount() ? $itemsQuery : [];
-
-foreach($itmes as $items) {
-	print_r($item);
-
-
-?>
-
 
 
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+	<meta charset="URF-8">
+	<title>To do</title>
 
-<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
 
+    <body>
+	><div class="list">
+	    <h1 class="header">To do.</h1>
 
-</head>
+	    <ul>
+	    	<li><span class="item">Pick up shopping</span></li>
+		<li><span class="item done">Learn php</span></li>
+	    <ul>
 
-<body>
-
+	    <form class="item-add"  action="add.php" method="post">
+		<input type="text" name="name" placeholder="Type a new item here." class="input"
+		autocomplete="off" required>
+		<input type="submit" value="Add" Class="">
   
  
 
