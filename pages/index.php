@@ -14,17 +14,18 @@
     </head>
 
     <body>
-	><div class="list">
+	  <div class="list">
 	    <h1 class="header">To do.</h1>
 	   
 	   <ul class="items">
 	    	<li>
 		    <span class="item">Pick up shopping</span>
 		    <a href="#" class="done-botton">Mark as done</a>
-	       </li>
+	        </li>
 		<li>
-		    <span class="item done">Learn php</span></li>
-	    <ul>
+		    <span class="item done">Learn php</span>
+		</li>
+	   </ul>
 
 	    <form class="item-add"  action="add.php" method="post">
 		<input type="text" name="name" placeholder="Type a new item here." class="input"
