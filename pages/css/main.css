@@ -47,8 +47,8 @@ a {
    text-decoration:line-through;
 }
 
-.items li
-.items-add .input{
+.items li,
+.item-add .input {
    border:0;
    border-bottom:1px dashed #ccc;
    padding: 15px 0;
@@ -63,7 +63,8 @@ a {
 }
 
 /* Done Button */
-.done-botton {
+
+.done-button {
    display:inline-block;
    font-size:0.8em;
    background-color:#d9dfe1;
