@@ -34,8 +34,7 @@
 </head>
 
 <body>
-
-<form name = "submitform" action="LoginMgr.php" method="post">
+<form name = "submitform" action="LoginMrg.php" method="post">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -47,7 +46,7 @@
                         <form role="form">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="username" name="username" type="username" autofocus>
+                                    <input class="form-control" placeholder="Username" name="username" type="username" autofocus>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" name="password" type="password" value="">
@@ -58,8 +57,7 @@
 				   </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.php" class="btn btn-lg btn-success btn-block" onclick =
-				"document.submitform.submit()";>Login</a>
+			        <a class="btn btn-lg btn-success btn-block" onclick = "document.submitform.submit()";>Login</a>
 				<a href="create.php" class="btn btn-lg btn-success btn-block">Create Account</a>
 				<a href="find.php" class="btn btn-lg btn-success btn-block">Find Password</a>
                             </fieldset>

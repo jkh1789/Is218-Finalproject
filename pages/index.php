@@ -1,11 +1,23 @@
 <?php
-require_once '../model/database.php';
+require_once 'session.php';
+require_once 'init.php';
 
-$query = 'SELECT * FROM todo  ORDER BY id';
-$statement = $db->prepare($query);
-$statement->execute();
-$categories = $statement->fetchAll();
-$statement->closeCursor();
+$itemsQuery = $db->prepare("
+    SELECT id, name, done
+    FROM todo
+    WHERE user = :user
+");
+
+$itemsQuery->execute([
+    'user' => $_SESSION['user_id']
+]);
+
+$items = $itemsQuery->rowCount() ? $itemsQuery : [];
+
+foreach($items as $item) {
+   print_r($item);
+
+}
 
 
 ?>
@@ -27,21 +39,32 @@ $statement->closeCursor();
         <div class="list">
 	    <h1 class="header">To do.</h1>
 	    
+	    <?php if(!empty($items)): ?>
 	    <ul class="items">
+	         <?php foreach($items as $item): ?>
 	    	   <li>
-		       <span class="item<?php echo $item['done'] ? ' done' : '' ?>"><?php echo $item['name']; ?></span>
-		           <a href="mark.php?as=done&item=1<?php echo $item['id']; ?>" class="done-button">Mark as done</a>
-	           </li>
+		       <span class="item<?php echo $item['done'] ? ' done' : '' ?>"><?php echo
+		       $item['name']; ?></span>
+		       <?php if(!$item['done']): ?>
+		           <a href="mark.php?as=done&item=<?php echo $item['id']; ?>" class="done-button">Mark as done</a>
+		       <?php endif; ?>
+		  </li>
+		  <?php endforeach; ?>
 	   </ul>
+	   <?php else: ?>
 	      <p>You haven't added items yet.</p>
+	   <?php endif; ?>
 
 	   <form class="item-add" action="add.php" method="post">
 		<input type="text" name="name" placeholder="Type a new item here." class="input" autocomplete="off" required>
-		<input type="submit" value="Add" Class="submit">
+		<input type="submit" value="Add" class="submit">
 	    </form>
-
+	    <li>
+	       <a href="Logout.php">Log Out</a>
+	    </li>
+	
 	 </div>
- 
+
 
 </body>
 

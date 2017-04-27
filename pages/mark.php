@@ -1,8 +1,8 @@
 <?php
 
-require_once('../model/databse.php');
+require_once'init.php';
 
-if(isset($_GET['as'], $_GET['item])) {
+if(isset($_GET['as'], $_GET['item'])) {
     $as     = $_GET['as'];
     $item   = $_GET['item'];
 
@@ -18,8 +18,8 @@ if(isset($_GET['as'], $_GET['item])) {
 	  $doneQuery->execute([
 	     'item' => $item,
 	     'user' => $_SESSION['user_id']
-	  ]):
-       break;
+	  ]);
+       break;       
        case 'notdone';
           $doneQuery = $db->prepare("
 	     UPDATE items
