@@ -11,17 +11,16 @@ $itemsQuery = $db->prepare("
 $itemsQuery->execute([
     'user' => $_SESSION['user_id']
 ]);
+$itemsQuery->execute([
+    'user' => $_SESSION['user_id']
+]);
 
 $items = $itemsQuery->rowCount() ? $itemsQuery : [];
 
-foreach($items as $item) {
+//foreach($items as $item) {
    print_r($item);
-
-}
-
-
+//}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,8 +28,8 @@ foreach($items as $item) {
 	<meta charset="URF-8">
 	<title>To do</title>
 
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<link href="http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,6 +38,9 @@ foreach($items as $item) {
         <div class="list">
 	    <h1 class="header">To do.</h1>
 	    
+	       
+		
+
 	    <?php if(!empty($items)): ?>
 	    <ul class="items">
 	         <?php foreach($items as $item): ?>
@@ -55,12 +57,12 @@ foreach($items as $item) {
 	      <p>You haven't added items yet.</p>
 	   <?php endif; ?>
 
-	   <form class="item-add" action="add.php" method="post">
-		<input type="text" name="name" placeholder="Type a new item here." class="input" autocomplete="off" required>
-		<input type="submit" value="Add" class="submit">
+	    <form class="item-add" action="add.php" method="post"> 
+	        <input type="text" name="name" placeholder="Type a new item and due date here." class="input" autocomplete="off" required>
+	        <input type="submit" value="Add" class="submit">
 	    </form>
 	    <li>
-	       <a href="Logout.php">Log Out</a>
+	       <a href="login.php">Log Out</a>
 	    </li>
 	
 	 </div>

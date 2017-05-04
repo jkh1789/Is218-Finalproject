@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +33,7 @@
 </head>
 
 <body>
-<form name = "submitform" action="LoginMrg.php" method="post">
+    <form name = "submitform" action="LoginMrg.php" method="post">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -59,9 +58,10 @@
                                 <!-- Change this to a button or input when using this as a form -->
 			        <a class="btn btn-lg btn-success btn-block" onclick = "document.submitform.submit()";>Login</a>
 				<a href="create.php" class="btn btn-lg btn-success btn-block">Create Account</a>
-				<a href="find.php" class="btn btn-lg btn-success btn-block">Find Password</a>
+				<a href="forgot.php" class="btn btn-lg btn-success btn-block">Find Password</a>
                             </fieldset>
-                        </form>
+                        </form> 
+			</form>
                     </div>
                 </div>
             </div>

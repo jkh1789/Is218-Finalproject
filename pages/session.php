@@ -3,10 +3,10 @@ session_start();
 
 include("../model/database.php");
 
-$user_check = $_SESSION['uid'];
-$ses_sql = mysqli_query($con, "select id from users where id = '$user_check'");
+$user_check = $_SESSION['Username'];
+$ses_sql = mysqli_query($con, "SELECT Username from users where id = '$user_check'");
 $row = mysqli_fetch_array($ses_sql);
-$login_session = $row['id'];
+$login_session = $row['Username'];
 
 if(!isset($login_session))
 {

@@ -9,7 +9,7 @@ if(isset($_GET['as'], $_GET['item'])) {
     switch($as) {
        case 'done':
 	  $doneQuery = $db->prepare("
-	     UPDATE items
+	     UPDATE item
 	     SET done = 1
 	     WHERE id = :item
 	     AND user = :user
@@ -20,19 +20,6 @@ if(isset($_GET['as'], $_GET['item'])) {
 	     'user' => $_SESSION['user_id']
 	  ]);
        break;       
-       case 'notdone';
-          $doneQuery = $db->prepare("
-	     UPDATE items
-	     SET done = 0
-	     WHERE id = :item
-	     AND user = :user
-	  ");
-
-	  $doneQuery->execute([
-	      'item' => $item,
-	      'user' => $_SESSION['user_id']
-	  ]);
-       break;
     }
 }
 
